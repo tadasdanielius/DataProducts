@@ -1,0 +1,19 @@
+.media {
+    font-size: 11px;
+    margin: 0px;
+}
+.media-body {
+    font-size: 12px;
+}
+
+.published {
+    margin: 0px;
+    font-size: 10px;
+    color: #444;
+}
+
+.media h5 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
