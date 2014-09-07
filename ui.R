@@ -60,8 +60,8 @@ shinyUI (fluidPage(
                        tags$br(),
                        h3('Getting started'),
                        tags$div(
-                           "Stock master application is Charting tool to create standard financial charts given number of days interval. To get started you can go to Stock examples and click one of the stocks listed or you can enter stock symbol into input field and press enter, some examples are VNET, AGTK, AOL, BIDU or wider list can be found ", a(href="http://www.marketwatch.com/tools/industry/stocklist.asp?bcind_ind=9535&bcind_period=3mo",
-"here", target="_blank"                                                                                                                                                                                                                                                                                                                        )
+                           "Stock master application is Charting tool to create standard financial charts given number of days interval. To get started you can go to Stock examples and click one of the stocks listed or you can enter stock symbol into input field and press enter, some examples are VNET, AGTK, AOL, BIDU or wider list can be found on various financial websites like ", a(href="http://www.marketwatch.com/tools/industry/stocklist.asp?bcind_ind=9535&bcind_period=3mo",
+"Market Watch", target="_blank"                                                                                                                                                                                                                                                                                                                        ), "(External link)"
                            ),
 p("Together with stock information related headline will also be fetched and rendered on the right side bar"),
                        p("Since application is using Yahoo API for retrieving financial information it is beyond my control to fully assure the performance. If it takes too long to load please refresh the browser."),
