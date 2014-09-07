@@ -7,8 +7,9 @@
 
 library(shiny)
 library(quantmod)
+library(XML)
 
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
     
     env <- new.env();
     env$symbol_cache <- NULL;
@@ -29,7 +30,7 @@ shinyServer(function(input, output) {
             headlines[symbol] <- xmlTreeParse(paste("http://finance.yahoo.com/rss/headline?s=",symbol,sep=""));
         }
     });
-
+    
     loadIndustryNews <- reactive({
         symbol <- toupper(input$symbol);
         industryNews <- env$industryNews;
@@ -72,7 +73,7 @@ shinyServer(function(input, output) {
         doc <- loadHeadlines();
         render_news (doc);
     });
-
+    
     output$industry_news <- renderUI({
         doc <- loadIndustryNews();
         render_news (doc);
@@ -95,8 +96,11 @@ shinyServer(function(input, output) {
     
     output$stockPlot <- renderPlot({
         d <- chart_data();
-        chartSeries(d,type=input$type, theme=chartTheme(input$theme))
+        chartSeries(d,type=input$type, theme=chartTheme(input$theme), name=input$symbol)
+    
         if (input$bband==T)
             addBBands();
+        
+        
     })
 })

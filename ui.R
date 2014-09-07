@@ -7,6 +7,7 @@
 
 library(shiny)
 
+
 shinyUI (fluidPage(
     tags$div(
         class="navbar navbar-masthead",
@@ -52,6 +53,18 @@ shinyUI (fluidPage(
                        tags$link(rel = "stylesheet", type = "text/css", href = "custom.css"),
                        tags$link(rel = "stylesheet", type = "text/css", href = "todc.css"),
                        plotOutput("stockPlot"),
+                       tags$br(),
+                       tags$div(class="alert",
+                                tags$strong("Note"), "Data is downloaded from remote servers (Yahoo). So, it might take some time to load or if it takes too looooooog please refresh your browser"
+                       ),
+                       tags$br(),
+                       h3('Getting started'),
+                       tags$div(
+                           "Stock master application is Charting tool to create standard financial charts given number of days interval. To get started you can go to Stock examples and click one of the stocks listed or you can enter stock symbol into input field and press enter, some examples are VNET, AGTK, AOL, BIDU or wider list can be found ", a(href="http://www.marketwatch.com/tools/industry/stocklist.asp?bcind_ind=9535&bcind_period=3mo",
+"here", target="_blank"                                                                                                                                                                                                                                                                                                                        )
+                           ),
+p("Together with stock information related headline will also be fetched and rendered on the right side bar"),
+                       p("Since application is using Yahoo API for retrieving financial information it is beyond my control to fully assure the performance. If it takes too long to load please refresh the browser."),
                        width=12
                    )
                )
@@ -65,7 +78,7 @@ shinyUI (fluidPage(
                                        tags$p("Here are some stock examples to get you started"),
                                        tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("IBM")',"IBM")," - IBM")),
                                        tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("GOOG")',"GOOG")," - Google")),
-                                       tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("YHOO")',"AAPL")," - Yahoo")),
+                                       tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("YHOO")',"YHOO")," - Yahoo")),
                                        tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("AAPL")',"AAPL")," - Apple")),
                                        tags$ul(class="unstyled",tags$li(tags$a(href="#", onclick='_doLinkClick("FB")',"FB")," - Facebook"))
                                        
